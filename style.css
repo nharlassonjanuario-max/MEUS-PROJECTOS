@@ -1,0 +1,2674 @@
+/* =========================================================
+   PORTFÓLIO — LASSON JANUÁRIO NHAR
+   CSS PRINCIPAL
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   2. CABEÇALHO / NAVBAR
+   ========================================================= */
+
+header {
+    width: 100%;
+    background-color: #111827;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+nav h1 {
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #38bdf8;
+
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   3. SEÇÃO INICIAL / HERO
+   ========================================================= */
+
+.inicio {
+    min-height: 85vh;
+
+    padding: 80px 10%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 60px;
+
+    text-align: left;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 30%, rgba(56, 189, 248, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 70%, rgba(99, 102, 241, 0.16), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a 50%, #111827);
+
+    color: white;
+}
+
+
+/* =========================================================
+   INÍCIO — FUNDO DIGITAL FUTURISTA
+   ========================================================= */
+
+.inicio {
+    min-height: 85vh;
+
+    padding: 80px 10%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 60px;
+
+    text-align: left;
+
+    position: relative;
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(0, 174, 255, 0.30),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(0, 100, 255, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #031b4e 45%,
+            #00133d 100%
+        );
+}
+
+
+/* =========================================================
+   REDE DIGITAL
+   ========================================================= */
+
+.inicio::before {
+    content: "";
+
+    position: absolute;
+    inset: -100px;
+
+    background-image:
+        linear-gradient(
+            25deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.20) 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.15) 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(0, 174, 255, 0.08) 50%,
+            transparent 51%
+        );
+
+    background-size:
+        180px 180px,
+        220px 220px,
+        100px 100px;
+
+    transform: perspective(500px) rotateX(55deg) scale(1.5);
+
+    opacity: 0.8;
+
+    animation: redeMovimento 18s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BRILHOS / PARTÍCULAS
+   ========================================================= */
+
+.inicio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 204, 255, 0.20) 0%,
+            rgba(0, 140, 255, 0.08) 35%,
+            transparent 70%
+        );
+
+    box-shadow:
+        -180px 280px 0 -245px rgba(0, 204, 255, 0.9),
+        -300px 180px 0 -247px rgba(0, 174, 255, 0.8),
+        -100px 400px 0 -248px rgba(0, 220, 255, 0.8),
+        -420px 330px 0 -247px rgba(0, 174, 255, 0.7);
+
+    animation: brilhoDigital 8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO ACIMA DO FUNDO
+   ========================================================= */
+
+.inicio > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+@keyframes redeMovimento {
+
+    from {
+        transform:
+            perspective(500px)
+            rotateX(55deg)
+            scale(1.5)
+            translateY(0);
+    }
+
+    to {
+        transform:
+            perspective(500px)
+            rotateX(55deg)
+            scale(1.5)
+            translateY(180px);
+    }
+
+}
+
+
+@keyframes brilhoDigital {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   4. FOTO DE PERFIL
+   ========================================================= */
+
+.foto-perfil {
+    width: 280px;
+    height: 280px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid #38bdf8;
+
+    box-shadow:
+        0 0 40px rgba(56, 189, 248, 0.25);
+
+    animation: fotoEntrada 1s ease forwards;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+}
+
+
+/* =========================================================
+   5. CONTEÚDO DO HERO
+   ========================================================= */
+
+.conteudo-inicio {
+    max-width: 650px;
+}
+
+.inicio .saudacao {
+    font-size: 18px;
+
+    color: #38bdf8;
+
+    margin-bottom: 8px;
+}
+
+.inicio h2 {
+    font-size: 56px;
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+
+    animation: aparecer 1s ease forwards;
+}
+
+.inicio h3 {
+    font-size: 24px;
+
+    font-weight: 400;
+
+    color: #d1d5db;
+
+    margin-bottom: 20px;
+}
+
+.inicio p:not(.saudacao) {
+    max-width: 650px;
+
+    font-size: 20px;
+
+    color: #d1d5db;
+
+    animation: aparecer 1s ease 0.3s forwards;
+}
+
+
+/* =========================================================
+   6. BOTÕES DO HERO
+   ========================================================= */
+
+.botoes-inicio {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.botoes-inicio a {
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    background-color: #38bdf8;
+
+    color: #111827;
+
+    transition: all 0.3s ease;
+}
+
+.botoes-inicio a:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+.botoes-inicio a:last-child {
+    background-color: transparent;
+
+    color: #38bdf8;
+
+    border: 2px solid #38bdf8;
+}
+
+.botoes-inicio a:last-child:hover {
+    background-color: #38bdf8;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   7. SOBRE MIM
+   ========================================================= */
+
+#sobre_mim {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 90px 20px;
+
+    text-align: center;
+}
+
+#sobre_mim h3 {
+    font-size: 36px;
+
+    margin-bottom: 30px;
+
+    color: #111827;
+}
+
+#sobre_mim p {
+    max-width: 800px;
+
+    margin: 0 auto 18px;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   8. TECNOLOGIAS
+   ========================================================= */
+
+#tecnologias {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background-color: #eaf0f6;
+}
+
+#tecnologias h3 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+    color: #111827;
+}
+
+#tecnologias > p {
+    color: #555;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   9. CONTAINER DAS TECNOLOGIAS
+   ========================================================= */
+
+.tecnologias-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+}
+
+
+/* =========================================================
+   10. CARD DE TECNOLOGIA
+   ========================================================= */
+
+.tecnologia {
+    padding: 25px 18px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(17, 24, 39, 0.08);
+
+    border-radius: 16px;
+
+    transition: all 0.35s ease;
+}
+
+.tecnologia:hover {
+    transform: translateY(-8px);
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   11. ÍCONE PRINCIPAL DAS TECNOLOGIAS
+   ========================================================= */
+
+.tecnologia-icone {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 14px;
+
+    background-color: #111827;
+
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+}
+
+
+/*
+   O texto que estava dentro do ícone
+   não deve aparecer ao lado do SVG.
+*/
+
+.tecnologia-icone > span {
+    display: none;
+}
+
+
+.tecnologia:hover .tecnologia-icone {
+    transform: translateY(-3px);
+}
+
+
+.tecnologia-icone svg {
+    width: 40px;
+    height: 40px;
+
+    display: block;
+
+    overflow: visible;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.tecnologia:hover .tecnologia-icone svg {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   12. HTML
+   ========================================================= */
+
+.html .tecnologia-icone {
+    color: #e34f26;
+}
+
+.html .tecnologia-icone svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+/*
+   A segunda forma cria o detalhe interno
+   do logotipo.
+*/
+
+.html .tecnologia-icone svg path:nth-child(2) {
+    fill: #111827;
+}
+
+
+/* =========================================================
+   13. CSS
+   ========================================================= */
+
+.css .tecnologia-icone {
+    color: #1572b6;
+}
+
+.css .tecnologia-icone svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+.css .tecnologia-icone svg path:nth-child(2) {
+    fill: #111827;
+}
+
+
+/* =========================================================
+   14. JAVASCRIPT
+   ========================================================= */
+
+.javascript .tecnologia-icone {
+    color: #f7df1e;
+}
+
+.javascript .tecnologia-icone svg {
+    fill: none;
+    stroke: none;
+}
+
+
+/* Quadrado amarelo */
+
+.javascript .tecnologia-icone svg rect {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+/* Letras JS */
+
+.javascript .tecnologia-icone svg path {
+    fill: #111827;
+    stroke: none;
+}
+
+
+/* =========================================================
+   15. PYTHON
+   ========================================================= */
+
+.python .tecnologia-icone {
+    color: #3776ab;
+}
+
+.python .tecnologia-icone svg {
+    fill: none;
+    stroke: none;
+}
+
+
+/* Parte azul */
+
+.python .tecnologia-icone svg path:nth-child(1) {
+    fill: #3776ab;
+}
+
+
+/* Parte amarela */
+
+.python .tecnologia-icone svg path:nth-child(2) {
+    fill: #ffd343;
+}
+
+
+/* Olhos */
+
+.python .tecnologia-icone svg circle:nth-of-type(1),
+.python .tecnologia-icone svg circle:nth-of-type(2) {
+    fill: #111827;
+}
+
+
+/* =========================================================
+   16. TEXTO DAS TECNOLOGIAS
+   ========================================================= */
+
+.tecnologia h4 {
+    font-size: 16px;
+
+    margin-bottom: 7px;
+
+    color: #111827;
+}
+
+.tecnologia p {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   17. PROJECTOS
+   ========================================================= */
+
+#projectos {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 20px;
+}
+
+#projectos > h3 {
+    text-align: center;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+    color: #111827;
+}
+
+#projectos > p {
+    text-align: center;
+
+    color: #555;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   18. GRID DOS PROJECTOS
+   ========================================================= */
+
+.projectos-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   19. CARD DOS PROJECTOS
+   ========================================================= */
+
+.projecto {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    min-height: 360px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.projecto:hover {
+    transform: translateY(-8px);
+
+    border-color: #d1d5db;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   20. ÍCONE PRINCIPAL DOS PROJECTOS
+   ========================================================= */
+
+.projecto-icone {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background-color: #111827;
+
+    color: #38bdf8;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.projecto-icone svg {
+    width: 31px;
+    height: 31px;
+
+    display: block;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* =========================================================
+   21. ÍCONE DA PASTA
+   ========================================================= */
+
+.projecto:first-child .projecto-icone svg {
+    fill: currentColor;
+
+    stroke: none;
+}
+
+
+/* =========================================================
+   22. CORES DOS PROJECTOS
+   ========================================================= */
+
+.projecto:nth-child(1) .projecto-icone {
+    color: #38bdf8;
+}
+
+.projecto:nth-child(2) .projecto-icone {
+    color: #22c55e;
+}
+
+.projecto:nth-child(3) .projecto-icone {
+    color: #a78bfa;
+}
+
+.projecto:nth-child(4) .projecto-icone {
+    color: #f59e0b;
+}
+
+.projecto:nth-child(5) .projecto-icone {
+    color: #06b6d4;
+}
+
+.projecto:nth-child(6) .projecto-icone {
+    color: #fbbf24;
+}
+
+
+/* =========================================================
+   23. HOVER DOS ÍCONES DOS PROJECTOS
+   ========================================================= */
+
+.projecto:hover .projecto-icone {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+.projecto:hover .projecto-icone svg {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   24. TÍTULOS DOS PROJECTOS
+   ========================================================= */
+
+.projecto h4 {
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   25. DESCRIÇÃO DOS PROJECTOS
+   ========================================================= */
+
+.projecto > p {
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   26. TECNOLOGIAS DOS PROJECTOS
+   ========================================================= */
+
+.projecto-tecnologias {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   27. TAG DE CADA TECNOLOGIA
+   ========================================================= */
+
+.projecto-tecnologias span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background-color: #eef2f7;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.projecto-tecnologias span:hover {
+    transform: translateY(-3px);
+
+    background-color: #dbeafe;
+}
+
+
+/* =========================================================
+   28. ÍCONES DAS TECNOLOGIAS DOS PROJECTOS
+   ========================================================= */
+
+.projecto-tecnologias > span > svg {
+    width: 17px;
+    height: 17px;
+
+    min-width: 17px;
+    min-height: 17px;
+
+    display: block;
+
+    overflow: visible;
+
+    transition: transform 0.25s ease;
+}
+
+.projecto-tecnologias > span:hover > svg {
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   29. PYTHON — PROJECTOS
+   ========================================================= */
+
+.tech-python {
+    color: #3776ab !important;
+}
+
+.tech-python svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+/* =========================================================
+   30. WINDOWS — 4 QUADRADOS
+   ========================================================= */
+
+.tech-windows {
+    color: #0078d4 !important;
+}
+
+.tech-windows svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+.tech-windows svg path {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   31. LINUX — SILHUETA
+   ========================================================= */
+
+.tech-linux {
+    color: #333333 !important;
+}
+
+.tech-linux svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+.tech-linux svg path {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   32. WI-FI
+   ========================================================= */
+
+.tech-wifi {
+    color: #16a34a !important;
+}
+
+.tech-wifi svg {
+    fill: none !important;
+    stroke: currentColor !important;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.tech-wifi svg circle {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   33. SEGURANÇA
+   ========================================================= */
+
+.tech-security {
+    color: #dc2626 !important;
+}
+
+.tech-security svg {
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* Escudo */
+
+.tech-security svg path:first-child {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+/* Marca de verificação */
+
+.tech-security svg path:not(:first-child) {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+
+/* =========================================================
+   34. HTML — PROJECTOS
+   ========================================================= */
+
+.tech-html {
+    color: #e34f26 !important;
+}
+
+.tech-html svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   35. CSS — PROJECTOS
+   ========================================================= */
+
+.tech-css {
+    color: #1572b6 !important;
+}
+
+.tech-css svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   36. JAVASCRIPT — PROJECTOS
+   ========================================================= */
+
+.tech-javascript {
+    color: #b59f00 !important;
+}
+
+.tech-javascript svg {
+    fill: none !important;
+    stroke: none !important;
+}
+
+.tech-javascript svg rect {
+    fill: #f7df1e !important;
+    stroke: none !important;
+}
+
+.tech-javascript svg path {
+    fill: #111827 !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   37. FIREBASE
+   ========================================================= */
+
+.tech-firebase {
+    color: #ff8a00 !important;
+}
+
+.tech-firebase svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   38. QR CODE
+   ========================================================= */
+
+.tech-qrcode {
+    color: #111827 !important;
+}
+
+.tech-qrcode svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+
+/* =========================================================
+   39. USB
+   ========================================================= */
+
+.tech-usb {
+    color: #2563eb !important;
+}
+
+.tech-usb svg {
+    fill: none !important;
+    stroke: currentColor !important;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   40. REACT
+   ========================================================= */
+
+.tech-react {
+    color: #087ea4 !important;
+}
+
+.tech-react .tech-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 17px;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   41. PDF
+   ========================================================= */
+
+.tech-pdf {
+    color: #dc2626 !important;
+}
+
+.tech-pdf svg {
+    fill: none !important;
+    stroke: currentColor !important;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   CONTACTOS — FUNDO DIGITAL FUTURISTA
+   ========================================================= */
+
+#contactos {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 40%,
+            rgba(0, 174, 255, 0.25),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 60%,
+            rgba(0, 100, 255, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #031b4e 50%,
+            #00133d
+        );
+}
+
+
+/* =========================================================
+   REDE DIGITAL DOS CONTACTOS
+   ========================================================= */
+
+#contactos::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -100px;
+
+    background-image:
+        linear-gradient(
+            35deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.18) 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.16) 49%,
+            transparent 50%
+        );
+
+    background-size:
+        200px 200px,
+        250px 250px;
+
+    transform:
+        perspective(600px)
+        rotateX(55deg)
+        scale(1.4);
+
+    opacity: 0.75;
+
+    animation:
+        redeContacto 20s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LUZ DIGITAL
+   ========================================================= */
+
+#contactos::after {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: -300px;
+    bottom: -350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 195, 255, 0.22),
+            transparent 65%
+        );
+
+    box-shadow:
+        400px -300px 0 -285px rgba(0, 220, 255, 0.9),
+        650px -150px 0 -288px rgba(0, 174, 255, 0.8),
+        900px -350px 0 -290px rgba(0, 220, 255, 0.7);
+
+    animation:
+        luzContacto 9s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO ACIMA DO FUNDO
+   ========================================================= */
+
+#contactos > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+@keyframes redeContacto {
+
+    from {
+        transform:
+            perspective(600px)
+            rotateX(55deg)
+            scale(1.4)
+            translateY(0);
+    }
+
+    to {
+        transform:
+            perspective(600px)
+            rotateX(55deg)
+            scale(1.4)
+            translateY(200px);
+    }
+
+}
+
+
+@keyframes luzContacto {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   43. REDES SOCIAIS
+   ========================================================= */
+
+.redes-contacto {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   44. CARDS DE CONTACTO
+   ========================================================= */
+
+.icone-contacto {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.35s ease;
+}
+
+.icone-contacto:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+
+/* =========================================================
+   45. ÍCONES DOS CONTACTOS
+   ========================================================= */
+
+.icone-contacto svg {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.icone-contacto:hover svg {
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   46. WHATSAPP
+   ========================================================= */
+
+.whatsapp {
+    color: #25d366;
+}
+
+.whatsapp svg {
+    fill: currentColor;
+
+    stroke: none;
+}
+
+
+/* =========================================================
+   47. INSTAGRAM
+   ========================================================= */
+
+.instagram {
+    color: #e1306c;
+}
+
+.instagram svg {
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+}
+
+
+/* =========================================================
+   48. EMAIL
+   ========================================================= */
+
+.email {
+    color: #38bdf8;
+}
+
+.email svg {
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+}
+
+
+/* =========================================================
+   49. GITHUB
+   ========================================================= */
+
+.github {
+    color: white;
+}
+
+.github svg {
+    fill: currentColor;
+
+    stroke: none;
+}
+
+
+/* =========================================================
+   50. TEXTO DOS CONTACTOS
+   ========================================================= */
+
+.icone-contacto span {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+/* =========================================================
+   FOOTER — FUNDO DIGITAL FUTURISTA
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #cbd5e1;
+
+    border-top:
+        1px solid rgba(0, 174, 255, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 174, 255, 0.20),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #020b22,
+            #010817
+        );
+}
+
+
+/* =========================================================
+   LINHAS DIGITAIS NO FOOTER
+   ========================================================= */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+    top: 0;
+
+    width: 120%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            25deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.12) 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            155deg,
+            transparent 48%,
+            rgba(0, 174, 255, 0.10) 49%,
+            transparent 50%
+        );
+
+    background-size:
+        180px 80px,
+        220px 90px;
+
+    opacity: 0.6;
+
+    pointer-events: none;
+}
+
+
+footer p {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 14px;
+
+    margin: 0;
+
+    color: #cbd5e1;
+}
+
+/* =========================================================
+   52. ANIMAÇÃO — APARECER
+   ========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   53. ANIMAÇÃO — FOTO
+   ========================================================= */
+
+@keyframes fotoEntrada {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   54. TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 18px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .inicio {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 70px 30px;
+
+        gap: 40px;
+    }
+
+    .conteudo-inicio {
+        margin: auto;
+    }
+
+    .botoes-inicio {
+        justify-content: center;
+    }
+
+    .tecnologias-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 700px;
+    }
+
+    .projectos-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   55. TELEMÓVEIS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav h1 {
+        font-size: 20px;
+    }
+
+    .menu {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+    .inicio {
+        min-height: auto;
+
+        padding: 70px 20px;
+
+        gap: 30px;
+    }
+
+    .foto-perfil {
+        width: 220px;
+        height: 220px;
+    }
+
+    .inicio h2 {
+        font-size: 38px;
+    }
+
+    .inicio h3 {
+        font-size: 20px;
+    }
+
+    .inicio p:not(.saudacao) {
+        font-size: 17px;
+    }
+
+    #sobre_mim,
+    #tecnologias,
+    #projectos,
+    #contactos {
+        padding: 70px 20px;
+    }
+
+    #sobre_mim h3,
+    #tecnologias h3,
+    #projectos > h3,
+    #contactos h3 {
+        font-size: 30px;
+    }
+
+    .projectos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projecto {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================================================
+   56. TELEMÓVEIS PEQUENOS
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    nav h1 {
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 10px 14px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .foto-perfil {
+        width: 190px;
+        height: 190px;
+    }
+
+    .inicio h2 {
+        font-size: 32px;
+    }
+
+    .inicio h3 {
+        font-size: 18px;
+    }
+
+    .botoes-inicio {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .botoes-inicio a {
+        text-align: center;
+    }
+
+    .tecnologias-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projecto {
+        padding: 24px;
+    }
+
+    .projecto h4 {
+        font-size: 18px;
+    }
+
+    .projecto > p {
+        font-size: 13px;
+    }
+
+    .redes-contacto {
+        gap: 15px;
+    }
+
+    .icone-contacto {
+        width: 95px;
+        height: 95px;
+    }
+
+    .icone-contacto svg {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   57. EFEITO MÁQUINA DE ESCREVER
+   ========================================================= */
+
+.typing-cursor {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    color: #38bdf8;
+
+    font-weight: 400;
+
+    animation: cursorBlink 0.8s infinite;
+}
+
+
+@keyframes cursorBlink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+/* =========================================================
+   LINK DO PROJECTO CHONGOENE COMPUTER
+   ========================================================= */
+
+.projecto-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.projecto-link:hover {
+    text-decoration: none;
+}
+
+.projecto-link h4 {
+    color: #111827;
+}
+
+.projecto-link::after {
+    content: "Clique para visitar o site";
+    display: block;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #a78bfa;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}
+
+.projecto-link:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   PROJECTOS CLICÁVEIS
+   ========================================================= */
+
+.projecto-clicavel,
+.projecto-link {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EFEITO DE CLIQUE NOS PROJECTOS
+   ========================================================= */
+
+.projecto-clicavel:hover,
+.projecto-link:hover {
+    transform: translateY(-10px);
+}
+
+
+/* =========================================================
+   MODAL DOS PROJECTOS
+   ========================================================= */
+
+.project-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(5, 10, 20, 0.82);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 5000;
+
+}
+
+
+/* MODAL ATIVO */
+
+.project-modal.ativo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DA JANELA
+   ========================================================= */
+
+.project-modal-content {
+
+    position: relative;
+
+    width: min(950px, 100%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform:
+        scale(0.85)
+        translateY(30px);
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* ANIMAÇÃO DE ABERTURA */
+
+.project-modal.ativo
+.project-modal-content {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+   ========================================================= */
+
+.modal-fechar {
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+
+}
+
+
+.modal-fechar:hover {
+
+    transform:
+        rotate(90deg)
+        scale(1.08);
+
+    background-color: #dc2626;
+
+}
+
+
+/* =========================================================
+   TÍTULO DO MODAL
+   ========================================================= */
+
+.project-modal-content h3 {
+
+    font-size: 28px;
+
+    color: #111827;
+
+    margin-bottom: 20px;
+
+    padding-right: 50px;
+
+}
+
+
+/* =========================================================
+   IMAGEM DO PROJECTO
+   ========================================================= */
+
+.modal-imagem-container {
+
+    width: 100%;
+
+    max-height: 60vh;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #f1f5f9;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.modal-imagem-container img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 60vh;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO MODAL
+   ========================================================= */
+
+.project-modal-content p {
+
+    margin-top: 20px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .project-modal {
+
+        padding: 15px;
+
+    }
+
+
+    .project-modal-content {
+
+        padding: 20px;
+
+        border-radius: 16px;
+
+        max-height: 94vh;
+
+    }
+
+
+    .project-modal-content h3 {
+
+        font-size: 22px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .modal-imagem-container {
+
+        max-height: 55vh;
+
+    }
+
+
+    .modal-imagem-container img {
+
+        max-height: 55vh;
+
+    }
+
+
+    .project-modal-content p {
+
+        font-size: 14px;
+
+    }
+
+
+    .modal-fechar {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 24px;
+
+    }
+
+}
+
+/* =========================================================
+   BOTÃO — VER PROJECTO
+   ========================================================= */
+
+.btn-ver-projecto {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid #38bdf8;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #0284c7;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn-ver-projecto span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.btn-ver-projecto:hover {
+    background-color: #38bdf8;
+
+    color: #111827;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(56, 189, 248, 0.25);
+}
+
+
+.btn-ver-projecto:hover span {
+    transform: translateX(5px);
+}
+
+
+.btn-ver-projecto:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   LINHA DE SCANNER FUTURISTA
+   ========================================================= */
+
+.scane_line {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #38bdf8,
+        #ffffff,
+        #38bdf8,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px #38bdf8,
+        0 0 18px #38bdf8,
+        0 0 35px rgba(56, 189, 248, 0.8);
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: scannerMove 5s linear infinite;
+}
+
+
+/* =========================================================
+   BRILHO DA LINHA
+   ========================================================= */
+
+.scane_line::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(56, 189, 248, 0.35),
+        transparent
+    );
+
+    filter: blur(5px);
+}
+
+
+/* =========================================================
+   MOVIMENTO DO SCANNER
+   ========================================================= */
+
+@keyframes scannerMove {
+
+    0% {
+        top: -5px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+
+}
+
+/* =========================================================
+   MENU TOGGLE — MOBILE
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 9px;
+
+    border: 1px solid rgba(56, 189, 248, 0.5);
+
+    border-radius: 10px;
+
+    background: rgba(2, 15, 45, 0.7);
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.menu-toggle:hover {
+    background: rgba(56, 189, 248, 0.12);
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+
+.menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    border-radius: 2px;
+
+    background: #38bdf8;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DO X
+   ========================================================= */
+
+.menu-toggle.ativo span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+
+.menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.menu-toggle.ativo span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 15px 20px;
+    }
+
+
+    nav h1 {
+        font-size: 18px;
+    }
+
+
+    /* Mostrar botão */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Menu fechado */
+
+    .menu {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 20px 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #020617,
+                #031b4e
+            );
+
+        border-top:
+            1px solid rgba(56, 189, 248, 0.15);
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.35);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+
+        z-index: 999;
+    }
+
+
+    /* Menu aberto */
+
+    .menu.ativo {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    .menu li {
+        width: 100%;
+    }
+
+
+    .menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 10px;
+
+        font-size: 15px;
+
+        border-bottom:
+            1px solid rgba(56, 189, 248, 0.08);
+    }
+
+
+    .menu a::after {
+        display: none;
+    }
+
+
+    .menu a:hover {
+        color: #38bdf8;
+
+        background:
+            rgba(56, 189, 248, 0.06);
+    }
+
+}
